@@ -21,7 +21,8 @@ import {
   MatTreeModule,
   MatDatepickerModule,
   MatStepperModule,
-  MatBadgeModule
+  MatBadgeModule,
+  
 } from '@angular/material';
 
 @NgModule({
