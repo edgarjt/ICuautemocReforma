@@ -1,13 +1,13 @@
-footer{
-    background-color: aquamarine;
+h2{
+    
+    text-align: center;
+    color: #ffffff;
 }
+ p{
+     color: #ffffff;
+ }
 
-.calidad{
-    text-align:center;
-    background-color: black;
-    color: blueviolet;
-}
-
-h3{
- text-align: center;
+iframe {
+    width: 100%;
+    height: auto;
 }

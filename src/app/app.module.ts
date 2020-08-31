@@ -13,7 +13,15 @@ import { FooterComponent } from './footer/footer.component';
 import { CarrerasComponent } from './carreras/carreras.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { OfertaComponent } from './oferta/oferta.component';
-import { NotfoundComponent } from './notfound/notfound.component'
+import { NotfoundComponent } from './notfound/notfound.component';
+import { IndustrialPetroleroComponent } from './industrial-petrolero/industrial-petrolero.component';
+import { EnfermeriaComponent } from './enfermeria/enfermeria.component';
+import { LogisticaComponent } from './logistica/logistica.component';
+import { ContabilidadComponent } from './contabilidad/contabilidad.component';
+import { TrabajoSocialComponent } from './trabajo-social/trabajo-social.component';
+import { AdministracionRhComponent } from './administracion-rh/administracion-rh.component';
+import { ComunicacionComponent } from './comunicacion/comunicacion.component';
+import { InscripcionComponent } from './inscripcion/inscripcion.component'
 
 
 
@@ -32,6 +40,14 @@ import { NotfoundComponent } from './notfound/notfound.component'
     NosotrosComponent,
     OfertaComponent,
     NotfoundComponent,
+    IndustrialPetroleroComponent,
+    EnfermeriaComponent,
+    LogisticaComponent,
+    ContabilidadComponent,
+    TrabajoSocialComponent,
+    AdministracionRhComponent,
+    ComunicacionComponent,
+    InscripcionComponent,
 
   ],
   imports: [
