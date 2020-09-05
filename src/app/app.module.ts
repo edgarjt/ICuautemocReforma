@@ -21,7 +21,9 @@ import { ContabilidadComponent } from './contabilidad/contabilidad.component';
 import { TrabajoSocialComponent } from './trabajo-social/trabajo-social.component';
 import { AdministracionRhComponent } from './administracion-rh/administracion-rh.component';
 import { ComunicacionComponent } from './comunicacion/comunicacion.component';
-import { InscripcionComponent } from './inscripcion/inscripcion.component'
+import { InscripcionComponent } from './inscripcion/inscripcion.component';
+import { DifucionComponent } from './difucion/difucion.component';
+import { ContactoComponent } from './contacto/contacto.component'
 
 
 
@@ -48,6 +50,8 @@ import { InscripcionComponent } from './inscripcion/inscripcion.component'
     AdministracionRhComponent,
     ComunicacionComponent,
     InscripcionComponent,
+    DifucionComponent,
+    ContactoComponent,
 
   ],
   imports: [

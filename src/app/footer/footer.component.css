@@ -1,13 +1,51 @@
 h2{
-    
     text-align: center;
     color: #ffffff;
 }
  p{
      color: #ffffff;
+     font-size: 20px;
  }
 
 iframe {
     width: 100%;
     height: auto;
 }
+
+ul{
+    list-style: none;
+    list-style-type: none;
+    width: 100%;
+}
+
+li{
+     text-align: justify;
+     color: #ffffff;
+     text-decoration: none;
+}
+
+li a{
+    text-decoration: none;
+    color: #ffffff;
+    text-align: justify;
+    font-size: 18px;
+}
+
+
+
+li a:hover{
+    text-decoration: none;
+    color: orange;
+    font-size: 18px;
+}
+
+li img{
+    padding: 5px;
+}
+
+.pie-pagina {
+    background-color: #2e86c1;
+    color: #ffffff;
+    text-align: center;
+}
+

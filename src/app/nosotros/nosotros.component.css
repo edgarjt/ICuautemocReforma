@@ -1,0 +1,132 @@
+h1{
+font-weight: bold; 
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+color: rgb(0, 0, 0); 
+text-shadow: -1px 0 rgb(253, 223, 54), 0 1px rgb(253, 223, 54), 1px 0 rgb(253, 223, 54), 0 -1px rgb(253, 223, 54);
+text-align: center;
+font-size: 70px;
+}
+
+h2{
+    text-align: center;
+    color:#FDC830; ;
+    font-size: 40px;
+}
+h3{
+    text-align: center;
+    color: #ffffff;
+    font-size: 40px;
+
+}
+h5{
+    text-align: justify;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+ p{
+    padding: 8px;
+    color: #ffffff;
+    text-align: justify;
+    font-size: 25px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card{
+    background: #005C97; 
+    background: -webkit-linear-gradient(to right, #363795, #005C97);
+    background: linear-gradient(to right, #363795, #005C97); }
+
+
+button {
+    
+    background-color: #ffffff;
+    background-color: -webkit-linear-gradient(to right, #F37335, #FDC830); 
+    background-color: linear-gradient(to right, #F37335, #FDC830);
+    background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 1500ms ease-in-out;
+    transition: background 1500ms ease-in-out;
+    width: 100%;
+    color: #363795;
+    border: 8px solid #FDC830; ;
+    border-radius: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+}
+
+button:hover{
+    background-position: 0;
+}
+
+ button p{
+    color: #f1c40f ;
+}
+
+
+.acordeon{
+    background-color: #ffffff;
+    border: 3px solid #FDC830; ;
+    border-radius: 4px;
+ 
+}
+
+.acordeon p{
+    font-size: 20px;
+}
+
+.nuestro{
+  background-color: #ffffff;
+  border: 8px solid #FDC830; ;
+  border-radius: 4px;
+}
+
+.nuestro h2 {
+    text-align: center;
+    color: #363795;
+    font-size: 30px;
+   
+}
+
+.nuestro p{
+    color: #363795;
+    font-size: 20px;
+}
+
+b{
+    color: rgb(253, 223, 54);
+}
+.nuestro li{
+    list-style: none;
+    list-style-type: none;
+    color: #363795;
+    font-size: 20px;
+}
+.calidad{
+    background-color: white; 
+      height: auto;
+      width: auto;
+    text-align: center;
+    border: 8px solid #FDC830; ;
+    border-radius: 4px;
+}
+
+.calidad h3{ 
+    color: #363795;
+    border: none ;
+}
+.calidad img{ 
+    padding: 4px;
+}
+
+.ventajas h3{
+    color:  #f1c40f ;
+}
+.ventajas ul li{
+    list-style: none;
+    color: #ffffff;
+    font-size: 20px;
+}
+
