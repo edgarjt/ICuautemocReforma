@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
@@ -25,7 +26,7 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview">
-          <a href="#" class="nav-link test">
+          <a  class="nav-link">
             <i class="nav-icon fas fa-user-cog"></i>
             <p>
               Administrar
@@ -33,20 +34,54 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
+
             <li class="nav-item">
-              <a href="#" class="nav-link test">
+              <a [routerLink]="['/users']"  class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Active Page</p>
+                <p>Usuarios</p>
               </a>
             </li>
+
             <li class="nav-item">
-              <a href="#" class="nav-link test">
+              <a [routerLink]="['/materias']" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Inactive Page</p>
+                <p>Materias</p>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a [routerLink]="['/semestres']" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Semestre</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a [routerLink]="['/carreras']" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Carreras</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a [routerLink]="['/plan_estudios']" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Plan de estudios</p>
+              </a>
+            </li>
+
           </ul>
         </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/admin_web']" class="nav-link" referrerpolicy="no-referrer">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Adminintrar web
+            </p>
+          </a>
+        </li>
+
         <li class="nav-item">
           <a href="http://bgsolution.com.mx" class="nav-link" target="_blank" referrerpolicy="no-referrer">
             <i class="nav-icon fas fa-th"></i>
@@ -55,9 +90,15 @@
             </p>
           </a>
         </li>
+
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
   </div>
   <!-- /.sidebar -->
 </aside>
+
+<app-wrapper></app-wrapper>
+<app-control-sidebar></app-control-sidebar>
+<app-footer></app-footer>
