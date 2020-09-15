@@ -30,6 +30,7 @@ import { AdminWebComponent } from './admin-web/admin-web.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { PreviewPdfComponent } from './preview-pdf/preview-pdf.component';
 import { EditMateriaComponent } from './edit-materia/edit-materia.component';
+import { EditSemestreComponent } from './edit-semestre/edit-semestre.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { EditMateriaComponent } from './edit-materia/edit-materia.component';
     AdminWebComponent,
     EditUserComponent,
     PreviewPdfComponent,
-    EditMateriaComponent
+    EditMateriaComponent,
+    EditSemestreComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import { EditMateriaComponent } from './edit-materia/edit-materia.component';
   entryComponents: [
     EditUserComponent,
     PreviewPdfComponent,
-    EditMateriaComponent
+    EditMateriaComponent,
+    EditSemestreComponent
   ]
 })
 export class AppModule { }

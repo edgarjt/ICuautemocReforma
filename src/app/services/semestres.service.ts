@@ -22,4 +22,12 @@ export class SemestresService {
     return this.http.get(this.url + 'getSemestres', { headers: httpOptions.headers });
   }
 
+  editSemestre(data): Observable<any> {
+    return this.http.post(this.url + 'editSemestre', data, { headers: httpOptions.headers });
+  }
+
+  deleteSemestre(data): Observable<any> {
+    return this.http.post(this.url + 'deleteSemestre', data, { headers: httpOptions.headers });
+  }
+
 }
