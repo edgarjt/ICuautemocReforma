@@ -22,4 +22,11 @@ export class CarrerasService {
     return this.http.get(this.url + 'getCarreras', { headers: httpOptions.headers });
   }
 
+  editCarrera(data): Observable<any> {
+    return this.http.post(this.url + 'editCarrera', data, {headers: httpOptions.headers});
+  }
+
+  deleteCarrera(data): Observable<any> {
+    return this.http.post(this.url + 'deleteCarrera', data, {headers: httpOptions.headers});
+  }
 }
