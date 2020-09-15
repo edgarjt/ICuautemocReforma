@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./semestres.component.css']
 })
 export class SemestresComponent implements OnInit {
+  message: any;
 
   constructor(
     private semestreService: SemestresService,
@@ -29,6 +30,9 @@ export class SemestresComponent implements OnInit {
 
   ngOnInit() {
     this.semestreService.getSemestres().subscribe(response => {
+      if (response.length === 0) {
+        return this.message = 'No hay datos que mostrar!';
+      }
       console.log(response);
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;

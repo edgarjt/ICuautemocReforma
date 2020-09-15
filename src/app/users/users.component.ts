@@ -11,6 +11,7 @@ import {isObject} from 'util';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  message: any;
 
   constructor(
     private userService: UsersService,
@@ -29,6 +30,9 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUsers().subscribe(response => {
+      if (response.length === 0) {
+        return this.message = 'No hay datos que mostrar!';
+      }
       console.log(response);
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;

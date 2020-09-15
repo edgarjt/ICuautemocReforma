@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
   styleUrls: ['./carreras.component.css']
 })
 export class CarrerasComponent implements OnInit {
+  message: any;
 
   constructor(
     private carreraService: CarrerasService,
@@ -29,6 +30,9 @@ export class CarrerasComponent implements OnInit {
 
   ngOnInit() {
     this.carreraService.getCarreras().subscribe(response => {
+      if (response.length === 0) {
+        return this.message = 'No hay datos que mostrar!';
+      }
       console.log(response);
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;

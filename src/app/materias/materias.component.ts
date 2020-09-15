@@ -12,6 +12,7 @@ import {EditMateriaComponent} from '../edit-materia/edit-materia.component';
   styleUrls: ['./materias.component.css']
 })
 export class MateriasComponent implements OnInit {
+  message: any;
 
   constructor(
     private materiaService: MateriasService,
@@ -30,9 +31,11 @@ export class MateriasComponent implements OnInit {
 
   ngOnInit() {
     this.materiaService.getMaterias().subscribe(response => {
-      console.log(response);
-      this.dataSource = new MatTableDataSource(response);
-      this.dataSource.paginator = this.paginator;
+      if (response.length === 0) {
+        return this.message = 'No hay datos que mostrar!';
+      }
+        this.dataSource = new MatTableDataSource(response);
+        this.dataSource.paginator = this.paginator;
     });
   }
 
