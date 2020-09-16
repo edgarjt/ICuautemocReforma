@@ -22,6 +22,10 @@ export class SemestresService {
     return this.http.get(this.url + 'getSemestres', { headers: httpOptions.headers });
   }
 
+  addSemestre(data): Observable<any> {
+    return this.http.post(this.url + 'addSemestre', data, { headers: httpOptions.headers });
+  }
+
   editSemestre(data): Observable<any> {
     return this.http.post(this.url + 'editSemestre', data, { headers: httpOptions.headers });
   }

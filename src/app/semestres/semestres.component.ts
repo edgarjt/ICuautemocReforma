@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import {SemestresService} from '../services/semestres.service';
 import {MatPaginator, MatTableDataSource, MatDialog, MatDialogConfig, MatSort} from '@angular/material';
 import {EditSemestreComponent} from '../edit-semestre/edit-semestre.component';
+import {AddSemestreComponent} from '../add-semestre/add-semestre.component';
 import {isObject} from 'util';
 import Swal from 'sweetalert2';
 
@@ -37,6 +38,29 @@ export class SemestresComponent implements OnInit {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
     });
+  }
+
+  addSemestre() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    const dialogRef = this.dialog.open(AddSemestreComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe( response => {
+      if (isObject(response)) {
+        Swal.fire('El semestre se registro con éxito.', 'Preciona ok para continuar!', 'success');
+        this.tableAddItem(response);
+      }
+    });
+  }
+
+  tableAddItem(item) {
+    const data = this.dataSource.data;
+    data.push(item);
+    this.dataSource.data = data;
   }
 
   openDialog(data) {
