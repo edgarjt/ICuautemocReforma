@@ -2,10 +2,11 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {PlanService} from '../services/plan.service';
 import {CarrerasService} from '../services/carreras.service';
 import {SemestresService} from '../services/semestres.service';
-import {MatPaginator, MatTableDataSource} from '@angular/material';
+import {MatDialog, MatDialogConfig, MatPaginator, MatTableDataSource} from '@angular/material';
 import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
 import Swal from "sweetalert2";
 import {isObject} from "util";
+import {AddPlanComponent} from '../add-plan/add-plan.component';
 
 @Component({
   selector: 'app-plan-estudios',
@@ -26,6 +27,7 @@ export class PlanEstudiosComponent implements OnInit {
     private carreraService: CarrerasService,
     private semestreService: SemestresService,
     private formBuilder: FormBuilder,
+    public dialog: MatDialog
   ) { }
 
   displayedColumns: string[] = ['materia', 'plan', 'delete'];
@@ -43,6 +45,22 @@ export class PlanEstudiosComponent implements OnInit {
 
     this.semestreService.getSemestres().subscribe(response => {
       this.semestres = response;
+    });
+  }
+
+  addPlan() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    const dialogRef = this.dialog.open(AddPlanComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe( response => {
+      if (isObject(response)) {
+        Swal.fire('La materia se registro con éxito.', 'Preciona ok para continuar!', 'success');
+      }
     });
   }
 

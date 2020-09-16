@@ -22,6 +22,10 @@ export class PlanService {
     return this.http.post(this.url + 'getPlan', data, { headers: httpOptions.headers });
   }
 
+  addPlan(data): Observable<any> {
+    return this.http.post(this.url + 'addPlan', data, { headers: httpOptions.headers });
+  }
+
   deletePlan(data): Observable<any> {
     return this.http.post(this.url + 'deletePlan', data, { headers: httpOptions.headers });
   }
