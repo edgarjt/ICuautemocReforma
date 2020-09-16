@@ -22,6 +22,10 @@ export class MateriasService {
     return this.http.get(this.url + 'getMaterias', { headers: httpOptions.headers });
   }
 
+  addMateria(data): Observable<any> {
+    return this.http.post(this.url + 'addMateria', data);
+  }
+
   viewPdf() {
     return this.url + 'viewPdf/';
   }

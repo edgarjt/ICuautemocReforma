@@ -33,6 +33,7 @@ import { EditMateriaComponent } from './edit-materia/edit-materia.component';
 import { EditSemestreComponent } from './edit-semestre/edit-semestre.component';
 import { EditCarreraComponent } from './edit-carrera/edit-carrera.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { AddMateriaComponent } from './add-materia/add-materia.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     EditMateriaComponent,
     EditSemestreComponent,
     EditCarreraComponent,
-    AddUserComponent
+    AddUserComponent,
+    AddMateriaComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +82,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     EditMateriaComponent,
     EditSemestreComponent,
     EditCarreraComponent,
-    AddUserComponent
+    AddUserComponent,
+    AddMateriaComponent
   ]
 })
 export class AppModule { }

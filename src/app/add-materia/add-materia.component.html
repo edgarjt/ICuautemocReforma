@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Nueva materia</h2>
+
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" [formGroup]="addMateriaForm">
+
+    <mat-form-field class="w-100">
+      <mat-label>Nombre de la materia</mat-label>
+
+      <input matInput type="text" formControlName="mat_nombre"
+             [ngClass]="{ 'is-invalid': submitted && form.mat_nombre.errors }" required>
+
+      <mat-error *ngIf="submitted && form.mat_nombre.errors" class="">
+        <div *ngIf="addMateriaForm.controls.mat_nombre.errors.required">Nombre invalido</div>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="row">
+      <div class="mt-2 mb-2 col-5">
+        <p class="text-secondary">{{namePdf}}</p>
+
+        <span>
+          <input type="file" class="file-pdf" id="pdf" name="mat_pdf" (change)="dataPdf($event)" />
+        </span>
+        <label class="label" for="pdf">
+          <span>Subir plan en fomato pdf</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="spinner-border text-primary" role="status" *ngIf="load">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button mat-flat-button color="primary" [disabled]="disableButton">Actualizar</button>
+      <button mat-flat-button class="bg-danger text-white ml-2" mat-dialog-close="">Cerrar</button>
+    </div>
+
+  </form>
+</mat-dialog-content>

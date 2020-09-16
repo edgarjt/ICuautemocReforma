@@ -5,6 +5,7 @@ import {PreviewPdfComponent} from '../preview-pdf/preview-pdf.component';
 import Swal from 'sweetalert2';
 import {isObject} from 'util';
 import {EditMateriaComponent} from '../edit-materia/edit-materia.component';
+import {AddMateriaComponent} from '../add-materia/add-materia.component';
 
 @Component({
   selector: 'app-materias',
@@ -37,6 +38,29 @@ export class MateriasComponent implements OnInit {
         this.dataSource = new MatTableDataSource(response);
         this.dataSource.paginator = this.paginator;
     });
+  }
+
+  addMateria() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    const dialogRef = this.dialog.open(AddMateriaComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe( response => {
+      if (isObject(response)) {
+        Swal.fire('La materia se registro con éxito.', 'Preciona ok para continuar!', 'success');
+        this.tableAddItem(response);
+      }
+    });
+  }
+
+  tableAddItem(item) {
+    const data = this.dataSource.data;
+    data.push(item);
+    this.dataSource.data = data;
   }
 
   previewPdf(data) {
