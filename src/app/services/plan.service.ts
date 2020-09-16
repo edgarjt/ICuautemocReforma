@@ -18,8 +18,12 @@ export class PlanService {
     this.url = Global.url;
   }
 
-  getPlan(): Observable<any> {
-    return this.http.get(this.url + 'getPlan', { headers: httpOptions.headers });
+  getPlan(data): Observable<any> {
+    return this.http.post(this.url + 'getPlan', data, { headers: httpOptions.headers });
+  }
+
+  deletePlan(data): Observable<any> {
+    return this.http.post(this.url + 'deletePlan', data, { headers: httpOptions.headers });
   }
 
 }
