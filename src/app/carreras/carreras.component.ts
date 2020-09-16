@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import {CarrerasService} from '../services/carreras.service';
 import {MatPaginator, MatTableDataSource, MatDialog, MatDialogConfig, MatSort} from '@angular/material';
-import {EditCarreraComponent} from '../edit-carrera/edit-carrera.component';
 import {isObject} from "util";
 import Swal from "sweetalert2";
+import {AddCarreraComponent} from '../add-carrera/add-carrera.component';
+import {EditCarreraComponent} from '../edit-carrera/edit-carrera.component';
 
 @Component({
   selector: 'app-carreras',
@@ -37,6 +38,31 @@ export class CarrerasComponent implements OnInit {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
     });
+  }
+
+  addCarrera() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    const dialogRef = this.dialog.open(AddCarreraComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(response => {
+      if (isObject(response)) {
+        Swal.fire(
+          'La carrera se registro con éxito!',
+          'Preciona el boton ok para continuar!',
+          'success');
+        this.tableAddItem(response);
+      }
+    });
+  }
+
+  tableAddItem(item) {
+    const data = this.dataSource.data;
+    data.push(item);
+    this.dataSource.data = data;
   }
 
   openDialog(data) {

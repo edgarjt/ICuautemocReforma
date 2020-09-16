@@ -35,6 +35,7 @@ import { EditCarreraComponent } from './edit-carrera/edit-carrera.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AddMateriaComponent } from './add-materia/add-materia.component';
 import { AddSemestreComponent } from './add-semestre/add-semestre.component';
+import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AddSemestreComponent } from './add-semestre/add-semestre.component';
     EditCarreraComponent,
     AddUserComponent,
     AddMateriaComponent,
-    AddSemestreComponent
+    AddSemestreComponent,
+    AddCarreraComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +88,8 @@ import { AddSemestreComponent } from './add-semestre/add-semestre.component';
     EditCarreraComponent,
     AddUserComponent,
     AddMateriaComponent,
-    AddSemestreComponent
+    AddSemestreComponent,
+    AddCarreraComponent
   ]
 })
 export class AppModule { }
