@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>Nuevo usuario</h2>
+
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" [formGroup]="addUserForm">
+
+    <mat-form-field class="w-100">
+      <mat-label>Nombre</mat-label>
+
+        <input matInput type="text" formControlName="name"
+               [ngClass]="{ 'is-invalid': submitted && form.name.errors }" required>
+
+        <mat-error *ngIf="submitted && form.name.errors" class="">
+          <div *ngIf="addUserForm.controls.name.errors.required">Nombre invalido</div>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Apellidos</mat-label>
+
+      <input matInput type="text" formControlName="surname"
+             [ngClass]="{ 'is-invalid': submitted && form.surname.errors }" required>
+
+      <mat-error *ngIf="submitted && form.surname.errors" class="">
+        <div *ngIf="addUserForm.controls.surname.errors.required">Apellidos invalido</div>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Correo electronico</mat-label>
+
+      <input matInput type="email" formControlName="email"
+             [ngClass]="{ 'is-invalid': submitted && form.email.errors }" required>
+
+      <mat-error *ngIf="submitted && form.email.errors" class="">
+        <div *ngIf="addUserForm.controls.email.errors.required">Correo electronico invalido</div>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Contraseña</mat-label>
+
+      <input matInput type="password" formControlName="password"
+             [ngClass]="{ 'is-invalid': submitted && form.password.errors }" required>
+
+      <mat-error *ngIf="submitted && form.password.errors" class="">
+        <div *ngIf="addUserForm.controls.password.errors.required">Nombre invalido</div>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="form-group">
+      <div class="spinner-border text-primary" role="status" *ngIf="load">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button mat-flat-button color="primary" [disabled]="disableButton">Actualizar</button>
+      <button mat-flat-button class="bg-danger text-white ml-2" mat-dialog-close="">Cerrar</button>
+    </div>
+
+  </form>
+</mat-dialog-content>

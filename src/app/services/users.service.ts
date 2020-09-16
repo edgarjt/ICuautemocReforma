@@ -22,6 +22,10 @@ export class UsersService {
     return this.http.get(this.url + 'getUsers', { headers: httpOptions.headers });
   }
 
+  addUser(data): Observable<any> {
+    return this.http.post(this.url + 'addUser', data, {headers: httpOptions.headers});
+  }
+
   updateUser(data): Observable<any> {
     return this.http.post(this.url + 'updateUser', data);
   }

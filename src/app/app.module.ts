@@ -32,6 +32,7 @@ import { PreviewPdfComponent } from './preview-pdf/preview-pdf.component';
 import { EditMateriaComponent } from './edit-materia/edit-materia.component';
 import { EditSemestreComponent } from './edit-semestre/edit-semestre.component';
 import { EditCarreraComponent } from './edit-carrera/edit-carrera.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { EditCarreraComponent } from './edit-carrera/edit-carrera.component';
     PreviewPdfComponent,
     EditMateriaComponent,
     EditSemestreComponent,
-    EditCarreraComponent
+    EditCarreraComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,8 @@ import { EditCarreraComponent } from './edit-carrera/edit-carrera.component';
     PreviewPdfComponent,
     EditMateriaComponent,
     EditSemestreComponent,
-    EditCarreraComponent
+    EditCarreraComponent,
+    AddUserComponent
   ]
 })
 export class AppModule { }

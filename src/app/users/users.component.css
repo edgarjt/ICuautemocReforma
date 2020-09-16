@@ -1,0 +1,6 @@
+.btn-float {
+  position: fixed;
+  right:35px;
+  bottom:70px;
+  z-index:999;
+}

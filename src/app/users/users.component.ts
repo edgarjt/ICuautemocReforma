@@ -3,6 +3,7 @@ import {UsersService} from '../services/users.service';
 import {MatPaginator, MatTableDataSource, MatDialog, MatDialogConfig, MatSort} from '@angular/material';
 import Swal from 'sweetalert2';
 import {EditUserComponent} from '../edit-user/edit-user.component';
+import {AddUserComponent} from '../add-user/add-user.component';
 import {isObject} from 'util';
 
 @Component({
@@ -38,6 +39,31 @@ export class UsersComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
 
     });
+  }
+
+  addUser() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    const dialogRef = this.dialog.open(AddUserComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(data => {
+      if (isObject(data)) {
+        Swal.fire(
+          'El usuario se registro con éxito!',
+          'Preciona el boton ok para continuar!',
+          'success');
+        this.tableAddItem(data);
+      }
+    });
+  }
+
+  tableAddItem(item) {
+    const data = this.dataSource.data;
+    data.push(item);
+    this.dataSource.data = data;
   }
 
   openDialog(data) {
