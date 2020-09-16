@@ -18,9 +18,9 @@
   </ng-container>
 
   <ng-container matColumnDef="mat_pdf">
-    <th mat-header-cell *matHeaderCellDef> PDF</th>
+    <th mat-header-cell *matHeaderCellDef> Plan</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-mini-fab color="accent" (click)="previewPdf(element)">
+      <button mat-mini-fab color="accent" (click)="previewPdf(element.mat_pdf)">
         <i class="far fa-file-pdf"></i>
       </button>
     </td>

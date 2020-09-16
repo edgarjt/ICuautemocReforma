@@ -7,6 +7,7 @@ import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
 import Swal from "sweetalert2";
 import {isObject} from "util";
 import {AddPlanComponent} from '../add-plan/add-plan.component';
+import {PreviewPdfComponent} from '../preview-pdf/preview-pdf.component';
 
 @Component({
   selector: 'app-plan-estudios',
@@ -46,6 +47,14 @@ export class PlanEstudiosComponent implements OnInit {
     this.semestreService.getSemestres().subscribe(response => {
       this.semestres = response;
     });
+  }
+
+  previewPdf(data) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = data;
+    dialogConfig.width = '600px';
+    dialogConfig.height = '600px';
+    const dialogRef = this.dialog.open(PreviewPdfComponent, dialogConfig);
   }
 
   addPlan() {

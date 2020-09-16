@@ -15,7 +15,7 @@ export class PreviewPdfComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.srcPdf = this.materiaService.viewPdf() + this.dataPdf.mat_pdf;
+    this.srcPdf = this.materiaService.viewPdf() + this.dataPdf;
   }
 
 }
