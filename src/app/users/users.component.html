@@ -4,7 +4,6 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-
 <mat-form-field class="w-25">
   <mat-label>Buscar usuario</mat-label>
   <input matInput (keyup)="applyFilter($event)">
@@ -37,7 +36,7 @@
   <ng-container matColumnDef="edit">
     <th mat-header-cell *matHeaderCellDef> Actualizar</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-mini-fab color="primary" (click)="openDialog(element)">
+      <button *ngIf="dataUser.sub != element.id" mat-mini-fab color="primary" (click)="openDialog(element)">
         <i class="far fa-edit"></i>
       </button>
     </td>
@@ -46,7 +45,7 @@
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef> Eliminar</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-mini-fab color="warn" (click)="delete(element.id)">
+      <button *ngIf="dataUser.sub != element.id" mat-mini-fab color="warn" (click)="delete(element.id)">
         <i class="far fa-trash-alt"></i>
       </button>
     </td>

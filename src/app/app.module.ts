@@ -14,6 +14,7 @@ import {CarrerasService} from './services/carreras.service';
 import {MateriasService} from './services/materias.service';
 import {PlanService} from './services/plan.service';
 import {SemestresService} from './services/semestres.service';
+import {AuthService} from './services/auth.service';
 
 /*components*/
 import { NavComponent } from './nav/nav.component';
@@ -37,6 +38,7 @@ import { AddMateriaComponent } from './add-materia/add-materia.component';
 import { AddSemestreComponent } from './add-semestre/add-semestre.component';
 import { AddCarreraComponent } from './add-carrera/add-carrera.component';
 import { AddPlanComponent } from './add-plan/add-plan.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { AddPlanComponent } from './add-plan/add-plan.component';
     AddMateriaComponent,
     AddSemestreComponent,
     AddCarreraComponent,
-    AddPlanComponent
+    AddPlanComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,8 @@ import { AddPlanComponent } from './add-plan/add-plan.component';
     CarrerasService,
     MateriasService,
     PlanService,
-    SemestresService
+    SemestresService,
+    AuthService
   ],
   bootstrap: [AppComponent],
 

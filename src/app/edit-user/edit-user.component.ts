@@ -24,10 +24,11 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.dataUser);
     this.UserUpdateForm = this.formBuilder.group({
-      name: new FormControl(this.dataUser.name, [Validators.required]),
-      surname: new FormControl(this.dataUser.surname, [Validators.required]),
-      email: new FormControl(this.dataUser.email, [Validators.required]),
+      name: new FormControl(this.dataUser.DataUser.name, [Validators.required]),
+      surname: new FormControl(this.dataUser.DataUser.surname, [Validators.required]),
+      email: new FormControl(this.dataUser.DataUser.email, [Validators.required]),
     });
   }
 
@@ -46,15 +47,13 @@ export class EditUserComponent implements OnInit {
     this.load = true;
 
     const params = {
-      id: this.dataUser.id,
+      id: this.dataUser.DataUser.id,
       name: this.form.name.value,
       surname: this.form.surname.value,
       email: this.form.email.value
     };
 
-    console.log(params);
-
-    this.userServices.updateUser(params).subscribe(response => {
+    this.userServices.updateUser(this.dataUser.dataToken, params).subscribe(response => {
       if (response) {
         this.load = false;
         this.matDialogRef.close(response);

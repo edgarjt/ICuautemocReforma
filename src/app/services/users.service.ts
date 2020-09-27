@@ -5,8 +5,8 @@ import {Observable} from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json; application/x-www-form-urlencoded; charset=UTF-8',
-  }),
+    'Content-Type': 'application/x-www-form-urlencoded'
+  })
 };
 
 @Injectable()
@@ -18,20 +18,20 @@ export class UsersService {
     this.url = Global.url;
   }
 
-  getUsers(): Observable<any> {
-    return this.http.get(this.url + 'getUsers', { headers: httpOptions.headers });
+  getUsers(token): Observable<any> {
+    return this.http.get(this.url + 'getUsers', { headers: httpOptions.headers.set('Authorization', token) });
   }
 
   addUser(data): Observable<any> {
     return this.http.post(this.url + 'addUser', data, {headers: httpOptions.headers});
   }
 
-  updateUser(data): Observable<any> {
-    return this.http.post(this.url + 'updateUser', data);
+  updateUser(token, data): Observable<any> {
+    return this.http.post(this.url + 'updateUser', data, {headers: httpOptions.headers.set('Authorization', token)});
   }
 
-  deleteUser(data): Observable<any> {
-    return this.http.post(this.url + 'deleteUser', data);
+  deleteUser(token, data): Observable<any> {
+    return this.http.post(this.url + 'deleteUser', data, {headers: httpOptions.headers.set('Authorization', token)});
   }
 
 }

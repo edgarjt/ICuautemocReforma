@@ -8,8 +8,11 @@ import {SemestresComponent} from './semestres/semestres.component';
 import {CarrerasComponent} from './carreras/carreras.component';
 import {PlanEstudiosComponent} from './plan-estudios/plan-estudios.component';
 import {AdminWebComponent} from './admin-web/admin-web.component';
+import {LoginComponent} from './login/login.component';
 
 const appRoutes: Routes = [
+  {path: 'login', component: LoginComponent},
+  {path: 'home', component: SidebarComponent},
   {path: '', component: SidebarComponent,
     children: [
       {path: 'users', component: UsersComponent},

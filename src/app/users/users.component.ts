@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 import {EditUserComponent} from '../edit-user/edit-user.component';
 import {AddUserComponent} from '../add-user/add-user.component';
 import {isObject} from 'util';
+import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -13,11 +15,18 @@ import {isObject} from 'util';
 })
 export class UsersComponent implements OnInit {
   message: any;
+  dataToken: any;
+  dataUser: any;
 
   constructor(
     private userService: UsersService,
-    public dialog: MatDialog
-  ) { }
+    private authService: AuthService,
+    public dialog: MatDialog,
+    private _router: Router
+  ) {
+    this.dataToken = this.authService.dataToken();
+    this.dataUser = this.authService.dataUser();
+  }
 
   displayedColumns: string[] = ['name', 'surname', 'email', 'avatar', 'edit', 'delete'];
   dataSource = new MatTableDataSource();
@@ -30,7 +39,11 @@ export class UsersComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(response => {
+    if (this.dataUser == null) {
+      this._router.navigate(['login']);
+      return false;
+    }
+    this.userService.getUsers(this.dataToken).subscribe(response => {
       if (response.length === 0) {
         return this.message = 'No hay datos que mostrar!';
       }
@@ -38,6 +51,8 @@ export class UsersComponent implements OnInit {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
 
+    }, error => {
+      console.log(error);
     });
   }
 
@@ -70,7 +85,7 @@ export class UsersComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.data = data;
+    dialogConfig.data = {DataUser: data, dataToken: this.dataToken};
     dialogConfig.width = '600px';
     dialogConfig.height = '600px';
     const dialogRef = this.dialog.open(EditUserComponent, dialogConfig);
@@ -110,7 +125,7 @@ export class UsersComponent implements OnInit {
       cancelButtonText: 'Cancelar!',
     }).then((result) => {
       if (result.isConfirmed) {
-        return this.userService.deleteUser(params).subscribe(response => {
+        this.userService.deleteUser(this.dataToken, params).subscribe(response => {
           if (isObject(response)) {
             Swal.fire(
               'El usuario se elimino con éxito',
@@ -122,7 +137,7 @@ export class UsersComponent implements OnInit {
         }, error => {
           Swal.fire(
             'Se ha producido un error al tratar de eliminar el usuario!',
-          'Preciona ok para continuar!',
+            'Preciona ok para continuar!',
             'error'
           );
           console.log(error);

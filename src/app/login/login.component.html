@@ -1,0 +1,33 @@
+<div class="w-50 mt-5 p-5">
+  <h2 mat-card-title> login</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" *ngIf="!dataUser">
+
+    <mat-form-field class="w-100">
+      <mat-label>Correo electronico</mat-label>
+
+      <input matInput type="email" formControlName="email"
+             [ngClass]="{ 'is-invalid': submitted && form.email.errors }" required>
+
+      <mat-error *ngIf="submitted && form.email.errors" class="">
+        <div *ngIf="loginForm.controls.email.errors.required">Email invalido</div>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Contraseña</mat-label>
+
+      <input matInput type="password" formControlName="password"
+             [ngClass]="{ 'is-invalid': submitted && form.password.errors }" required>
+
+      <mat-error *ngIf="submitted && form.password.errors" class="">
+        <div *ngIf="loginForm.controls.password.errors.required">Nombre invalido</div>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="form-group">
+      <button mat-flat-button color="primary" [disabled]="disableButton">Ingresar</button>
+    </div>
+
+  </form>
+</div>
+
