@@ -1,1 +1,36 @@
-<p>contacto works!</p>
+<div class="container-fluid ">
+    <h1 class="animate__animated animate__bounce " >Instituto Cuauhtémoc Reforma</h1>
+    <h2> Excelencia Académica, Siempre.</h2>
+     <h3>Contacto</h3>
+     <p> <b></b></p>
+</div>
+
+
+<div class="container">
+   <div class="formulario">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Registrate</h1>
+           </div>
+        <div class="col-md-8">
+            <form>
+              <div [formGroup]="form">
+                <mat-form-field appearance="fill">
+                  <mat-label>Phone number</mat-label>
+                  <example-tel-input formControlName="tel" required></example-tel-input>
+                  <mat-icon matSuffix>phone</mat-icon>
+                  <mat-hint>Include area code</mat-hint>
+                </mat-form-field>
+              </div>
+              
+            
+        </div>
+      
+        
+    </div>
+    </div>
+</div>
+
+
+<button class="btn btn-primary" type="submit" name="submit">Enviar</button>
+<button class="btn btn-success" type="reset" name="reset">Limpiar</button>
