@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
-import {MatDialogRef} from '@angular/material';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {UsersService} from '../services/users.service';
 import Swal from 'sweetalert2';
 
@@ -16,6 +16,7 @@ export class AddUserComponent implements OnInit {
   load: boolean;
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public dataUser,
     private userService: UsersService,
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<AddUserComponent>
@@ -58,8 +59,7 @@ export class AddUserComponent implements OnInit {
 
     };
 
-    console.log(params);
-    this.userService.addUser(params).subscribe(response => {
+    this.userService.addUser(this.dataUser.token, params).subscribe(response => {
       this.load = false;
       this.dialogRef.close(response);
 

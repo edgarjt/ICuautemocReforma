@@ -24,7 +24,6 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.dataUser);
     this.UserUpdateForm = this.formBuilder.group({
       name: new FormControl(this.dataUser.DataUser.name, [Validators.required]),
       surname: new FormControl(this.dataUser.DataUser.surname, [Validators.required]),

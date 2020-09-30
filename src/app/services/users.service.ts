@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/x-www-form-urlencoded'
+    'Content-Type': 'application/json; application/x-www-form-urlencoded; charset=UTF-8'
   })
 };
 
@@ -22,8 +22,8 @@ export class UsersService {
     return this.http.get(this.url + 'getUsers', { headers: httpOptions.headers.set('Authorization', token) });
   }
 
-  addUser(data): Observable<any> {
-    return this.http.post(this.url + 'addUser', data, {headers: httpOptions.headers});
+  addUser(token, data): Observable<any> {
+    return this.http.post(this.url + 'addUser', data, {headers: httpOptions.headers.set('Authorization', token)});
   }
 
   updateUser(token, data): Observable<any> {

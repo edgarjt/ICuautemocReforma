@@ -47,7 +47,6 @@ export class UsersComponent implements OnInit {
       if (response.length === 0) {
         return this.message = 'No hay datos que mostrar!';
       }
-      console.log(response);
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
 
@@ -60,6 +59,7 @@ export class UsersComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.data = {token: this.dataToken};
     dialogConfig.width = '600px';
     dialogConfig.height = '600px';
     const dialogRef = this.dialog.open(AddUserComponent, dialogConfig);
