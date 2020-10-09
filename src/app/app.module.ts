@@ -23,7 +23,8 @@ import { AdministracionRhComponent } from './administracion-rh/administracion-rh
 import { ComunicacionComponent } from './comunicacion/comunicacion.component';
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
 import { DifucionComponent } from './difucion/difucion.component';
-import { ContactoComponent } from './contacto/contacto.component'
+import { ContactoComponent } from './contacto/contacto.component';
+import { PlanEstudioComponent } from './plan-estudio/plan-estudio.component'
 
 
 
@@ -52,6 +53,7 @@ import { ContactoComponent } from './contacto/contacto.component'
     InscripcionComponent,
     DifucionComponent,
     ContactoComponent,
+    PlanEstudioComponent,
 
   ],
   imports: [

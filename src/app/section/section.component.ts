@@ -12,7 +12,7 @@ export class SectionComponent implements OnInit {
 
   ngOnInit() {
     const options = {
-    strings: ['Somos: <i>strings</i> with', ' <strong>Excelente académica</strong>', 'Formación Integral'],
+    strings: [ ' <strong>Brindamos:</strong>', 'Excelencia académica','Formación Integral', 'Visión Humanista'],
     typeSpeed: 100,
     backSpeed: 100,
     smartBackspace: true, // this is a default
