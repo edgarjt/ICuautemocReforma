@@ -2,6 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-    background: #005C97; 
+    background: #005C97;
     background: -webkit-linear-gradient(to right, #363795, #005C97);
     background: linear-gradient(to right, #363795, #005C97); }
+.mt-g {
+  margin-top: 70px;
+}
