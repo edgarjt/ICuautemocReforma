@@ -1,3 +1,11 @@
 .bg-nav {
-  background: #085797;
+  background: #04457a;
+}
+
+.nav-link{
+  color: #ffffff !important;
+  font-family: 'Encode Sans', sans-serif;
+}
+.nav-link:hover{
+  border-bottom: yellow 3px solid;
 }

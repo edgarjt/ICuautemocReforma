@@ -1,9 +1,11 @@
 h2{
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 25px;
+    color:  #04457a;
     text-align: center;
-    color: #ffffff;
 }
  p{
-     color: #ffffff;
+     color:   #04457a;
      font-size: 20px;
  }
 
@@ -23,14 +25,14 @@ ul{
 
 li{
      text-align: justify;
-     color: #ffffff;
+     color:   #04457a;
      text-decoration: none;
+     font-size: 20px;
 }
 
 li a{
     text-decoration: none;
-    color: #ffffff;
-    text-align: justify;
+    color:  #04457a;
     font-size: 18px;
 }
 
@@ -38,7 +40,7 @@ li a{
 
 li a:hover{
     text-decoration: none;
-    color: orange;
+    color:  #f39c12;
     font-size: 18px;
 }
 
@@ -47,7 +49,7 @@ li img{
 }
 
 .pie-pagina {
-    background-color: #2e86c1;
+    background-color:  #04457a;
     color: #ffffff;
     text-align: center;
 }
