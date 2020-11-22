@@ -13,6 +13,12 @@ import {DifucionComponent} from './difucion/difucion.component';
 import {ContactoComponent} from './contacto/contacto.component';
 import {IndustrialPetroleroComponent} from './industrial-petrolero/industrial-petrolero.component';
 import {PlanEstudioComponent } from  './plan-estudio/plan-estudio.component';
+import {EnfermeriaComponent} from './enfermeria/enfermeria.component';
+import {LogisticaComponent} from './logistica/logistica.component';
+import {TrabajoSocialComponent} from './trabajo-social/trabajo-social.component';
+import {AdministracionRhComponent} from './administracion-rh/administracion-rh.component';
+
+
 
 /*Se crea una constante*/
 const appRoutes: Routes = [
@@ -26,6 +32,12 @@ const appRoutes: Routes = [
   {path: 'contacto', component: ContactoComponent},
   {path: 'industrial_petrolero', component: IndustrialPetroleroComponent},
   {path: 'plan_estudio', component: PlanEstudioComponent },
+  {path: 'enfermeria', component: EnfermeriaComponent },
+  {path: 'logistica', component: LogisticaComponent} ,
+  {path: 'trabajosocial', component:  TrabajoSocialComponent } ,
+  {path: 'administracion', component:  AdministracionRhComponent} ,
+
+
   {path: '**', component: NotfoundComponent},
 
 

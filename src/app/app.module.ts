@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {routing, appRoutingProvider} from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -24,12 +25,9 @@ import { ComunicacionComponent } from './comunicacion/comunicacion.component';
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
 import { DifucionComponent } from './difucion/difucion.component';
 import { ContactoComponent } from './contacto/contacto.component';
-import { PlanEstudioComponent } from './plan-estudio/plan-estudio.component'
+import { PlanEstudioComponent } from './plan-estudio/plan-estudio.component';
 
-
-
-
-
+import { DifucionService} from './services/difucion.service';
 
 
 @NgModule({
@@ -60,12 +58,14 @@ import { PlanEstudioComponent } from './plan-estudio/plan-estudio.component'
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    routing
+    routing,
+    HttpClientModule
 
 
   ],
   providers: [
-    appRoutingProvider
+    appRoutingProvider,
+    DifucionService
   ],
   bootstrap: [AppComponent]
 })
