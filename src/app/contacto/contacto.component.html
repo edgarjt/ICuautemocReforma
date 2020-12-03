@@ -1,18 +1,32 @@
+<div class="container mt-g">
+  <h1>contacto</h1>
+  <mat-card class="mt-5 mb-5">
+    <form (ngSubmit)="onSubmit()" [formGroup]="sendMessageGroup">
+      <mat-form-field class="w-100 mb-3">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Pedro..." formControlName="name"
+               [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
 
+        <mat-error *ngIf="submitted && form.name.errors" class="">
+          <div *ngIf="sendMessageGroup.controls.name.errors.required">Nombre invalido</div>
+        </mat-error>
+      </mat-form-field>
 
+      <div class="form-group" *ngIf="load">
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
 
-<div class=" color c1"> 
+      <div class="form-group mb-3" *ngIf="alertDanger">
+        <div class="alert alert-danger" role="alert" >
+          {{message}}
+        </div>
+      </div>
 
-</div>
-<div class="color c2"> 
-
-</div>
-<div class=" color c3"> 
-
-</div>
-<div class="color c4"> 
-
-</div>
-<div class="color c5"> 
-
+      <div class="form-group">
+        <button mat-raised-button color="primary" [disabled]="disableButtonSend">Enviar</button>
+      </div>
+    </form>
+  </mat-card>
 </div>

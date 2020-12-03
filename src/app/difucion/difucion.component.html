@@ -1,6 +1,15 @@
-<div class="container mt-g"  *ngFor="let item of data">
-<p class="text-success"> {{item.dif_titulo}}</p>
-<p class="text-success"> {{item.dif_descripcion}}</p>
-  <img src="{{item.dif_img}}" alt="">
 
+<h1 CLASS="mt-g">Difusión</h1>
+<div class="container"  *ngFor="let item of data">
+<div class="difucion">
+  <div class="row">
+  <div class="col-md-7">
+
+    <h2 > {{item.dif_titulo}}</h2>
+<p > {{item.dif_descripcion}}</p></div>
+  <div class="col-md-5">
+
+  <img src="{{item.dif_img}}" alt=""></div>
+</div></div>
 </div>
+

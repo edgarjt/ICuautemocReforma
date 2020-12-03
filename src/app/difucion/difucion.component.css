@@ -1,0 +1,26 @@
+.difucion{
+  padding: 1%;
+}
+p{
+     color: #F37335;
+}
+
+img{
+  white: 100%;
+  height: auto;
+  padding: 5px;
+}
+h2{
+  font-size: 40px;
+  font-weight: bold;
+  color: #04457a;
+}
+h1{
+  text-align: center;
+  font-family:'Roboto Condensed', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: #04457a;
+  padding: 0%;
+   text-decoration: underline #f39c12;
+}
