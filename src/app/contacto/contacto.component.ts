@@ -21,7 +21,13 @@ export class ContactoComponent implements OnInit {
 
   ngOnInit() {
     this.sendMessageGroup = this.formBuilder.group({
-      name: new FormControl('', [Validators.required])
+      name: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [Validators.required]),
+      email: new FormControl('',[Validators.required]),
+      career: new FormControl('',[Validators.required]),
+      system: new FormControl('',[Validators.required]),
+      
+      
     });
   }
 
@@ -40,7 +46,12 @@ export class ContactoComponent implements OnInit {
     this.load = true;
 
     const params = {
-      name: this.form.name.value
+      name: this.form.name.value,
+      phone: this.form.phone.value,
+      email: this.form.email.value,
+      career: this.form.career.value,
+      system: this.form.career.value,
+      
 
     };
 
