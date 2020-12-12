@@ -1,6 +1,7 @@
 <div class="container mt-g">
-  <h1>contacto</h1>
-  <mat-card class="mt-5 mb-5">
+  <h1>Contacto</h1>
+  <p>Inscribete en linea sin salir de tu casa.</p>
+  <mat-card class=" mb-5">
     <form (ngSubmit)="onSubmit()" [formGroup]="sendMessageGroup">
       <mat-form-field class="w-100 mb-3">
         <mat-label>Nombre completo</mat-label>
@@ -21,7 +22,7 @@
           <div *ngIf="sendMessageGroup.controls.name.errors.required">Numero invalido</div>
         </mat-error>
         <mat-icon matSuffix>phone</mat-icon>
-        <mat-hint>Include area code</mat-hint>
+        <mat-hint>Solo numeros</mat-hint>
       </mat-form-field>
 
     
@@ -59,7 +60,7 @@
     
           <!-------system---->
           <mat-form-field class="w-100 mb-3">
-            <mat-label>Carrera</mat-label>
+            <mat-label>Sistema de estudio</mat-label>
             <mat-select matInput formControlName="system"
             [ngClass]="{ 'is-invalid': submitted && form.name.errors }" >
               <mat-option value="option">Estudio en linea</mat-option>,
