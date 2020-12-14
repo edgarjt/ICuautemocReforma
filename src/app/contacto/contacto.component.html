@@ -25,7 +25,7 @@
         <mat-hint>Solo numeros</mat-hint>
       </mat-form-field>
 
-    
+
       <!--------email---->
       <mat-form-field class="w-100 mb-3">
         <mat-label>Correo electronico</mat-label>
@@ -41,39 +41,37 @@
         <mat-label>Carrera</mat-label>
         <mat-select matInput formControlName="career"
         [ngClass]="{ 'is-invalid': submitted && form.name.errors }" >
-          <mat-option value="option">TÉCNICO EN INDUSTRIAL PETRÓLERO</mat-option>
-          <mat-option value="option"> TÉCNICO EN ENFERMERÍA</mat-option>
-          <mat-option value="option">TÉCNICO EN LOGÍSTICA</mat-option>
-          <mat-option value="option">TÉCNICO EN CONTABILIDAD</mat-option>
-          <mat-option value="option">TÉCNICO EN TRABAJO SOCIAL</mat-option>
-          <mat-option value="option">TÉCNICO EN ADMINISTRACIÓN DE R.H.🗃️</mat-option>
-          <mat-option value="option">TÉCNICO EN MEDIOS DE COMUNICACIÓN</mat-option>
-     
+          <mat-option value="1">TÉCNICO EN INDUSTRIAL PETRÓLERO</mat-option>
+          <mat-option value="2"> TÉCNICO EN ENFERMERÍA</mat-option>
+          <mat-option value="3">TÉCNICO EN LOGÍSTICA</mat-option>
+          <mat-option value="4">TÉCNICO EN CONTABILIDAD</mat-option>
+
+
         </mat-select>
 
         <mat-error *ngIf="submitted && form.name.errors" class="">
           <div *ngIf="sendMessageGroup.controls.name.errors.required">Correo invalido</div>
         </mat-error>
       </mat-form-field>
-   
-  
-    
+
+
+
           <!-------system---->
           <mat-form-field class="w-100 mb-3">
             <mat-label>Sistema de estudio</mat-label>
             <mat-select matInput formControlName="system"
             [ngClass]="{ 'is-invalid': submitted && form.name.errors }" >
-              <mat-option value="option">Estudio en linea</mat-option>,
-              <mat-option value="option">Estudio semiescolarizado</mat-option>
+              <mat-option value="option1">Estudio en linea</mat-option>,
+              <mat-option value="option2">Estudio semiescolarizado</mat-option>
             </mat-select>
-    
+
             <mat-error *ngIf="submitted && form.name.errors" class="">
               <div *ngIf="sendMessageGroup.controls.name.errors.required">Correo invalido</div>
             </mat-error>
           </mat-form-field>
-       
-         
-      
+
+
+
 
 
       <div class="form-group" *ngIf="load">

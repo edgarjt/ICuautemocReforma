@@ -1,3 +1,3 @@
 export const Global = {
-  url: 'http://www.bgsolution.com.mx/irccBack/public/api/'
+  url: 'http://institutocuauhtemocreforma.com/irccBack/public/api/'
 };
