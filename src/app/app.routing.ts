@@ -17,6 +17,7 @@ import {EnfermeriaComponent} from './enfermeria/enfermeria.component';
 import {LogisticaComponent} from './logistica/logistica.component';
 import {TrabajoSocialComponent} from './trabajo-social/trabajo-social.component';
 import {AdministracionRhComponent} from './administracion-rh/administracion-rh.component';
+import {LicenciaturaComponent} from './licenciatura/licenciatura.component';
 
 
 
@@ -36,6 +37,8 @@ const appRoutes: Routes = [
   {path: 'logistica', component: LogisticaComponent} ,
   {path: 'trabajosocial', component:  TrabajoSocialComponent } ,
   {path: 'administracion', component:  AdministracionRhComponent} ,
+  {path: 'licenciatura', component: LicenciaturaComponent},
+  
 
 
   {path: '**', component: NotfoundComponent},

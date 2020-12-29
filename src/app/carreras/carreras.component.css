@@ -16,6 +16,7 @@ font-size: 25px;
 color:  #f39c12
 ;
 }
+
  ul li{
 list-style: none;
 font-family: 'Roboto Condensed', sans-serif;
@@ -37,4 +38,36 @@ hr{
     background-color: #f39c12;
     font-size: 20px ;
     
+}
+.cita{
+    text-align: center;
+    background-color:  #aed6f1;
+    height: 100px;
+    border-radius: 3px;
+}
+ 
+.cita h2{
+   
+   font-family:'Roboto Condensed', sans-serif;
+   font-size: 40px;
+   font-weight: bold;
+   color: #04457a;  
+}
+
+.cita a{
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color:  black ;
+    border: 4px solid  #f39c12 ;
+    padding: 6px;
+    width: 100%;
+   text-decoration: none;
+   background-color: white;
+   font-weight: bold;
+   
+}
+
+.cita a:hover{
+    background-color: #f39c12 ;
+    color: white;
 }

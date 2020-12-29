@@ -29,6 +29,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { PlanEstudioComponent } from './plan-estudio/plan-estudio.component';
 
 import { DifucionService} from './services/difucion.service';
+import { LicenciaturaComponent } from './licenciatura/licenciatura.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { DifucionService} from './services/difucion.service';
     DifucionComponent,
     ContactoComponent,
     PlanEstudioComponent,
+    LicenciaturaComponent,
 
   ],
     imports: [

@@ -1,6 +1,6 @@
 <div class="container mt-g">
-  <h1>Contacto</h1>
-  <p>Inscribete en linea sin salir de tu casa.</p>
+
+  <h1>Inscribete en linea sin salir de tu casa.</h1>
   <mat-card class=" mb-5">
     <form (ngSubmit)="onSubmit()" [formGroup]="sendMessageGroup">
       <mat-form-field class="w-100 mb-3">
@@ -16,10 +16,10 @@
       <mat-form-field class="w-100 mb-3">
         <mat-label>Numero de telefono</mat-label>
         <input matInput placeholder="Eduardo Frias..." formControlName="phone"
-               [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
+               [ngClass]="{ 'is-invalid': submitted && form.phone.errors }">
 
-        <mat-error *ngIf="submitted && form.name.errors" class="">
-          <div *ngIf="sendMessageGroup.controls.name.errors.required">Numero invalido</div>
+        <mat-error *ngIf="submitted && form.phone.errors" class="">
+          <div *ngIf="sendMessageGroup.controls.phone.errors.required">Numero invalido</div>
         </mat-error>
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Solo numeros</mat-hint>
@@ -32,15 +32,15 @@
         <input matInput placeholder="Ed@Ejemplo.com..." formControlName="email"
                [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
 
-        <mat-error *ngIf="submitted && form.name.errors" class="">
-          <div *ngIf="sendMessageGroup.controls.name.errors.required">Correo invalido</div>
+        <mat-error *ngIf="submitted && form.email.errors" class="">
+          <div *ngIf="sendMessageGroup.controls.email.errors.required">Correo invalido</div>
         </mat-error>
       </mat-form-field>
       <!-------career---->
       <mat-form-field class="w-100 mb-3">
         <mat-label>Carrera</mat-label>
         <mat-select matInput formControlName="career"
-        [ngClass]="{ 'is-invalid': submitted && form.name.errors }" >
+        [ngClass]="{ 'is-invalid': submitted && form.career.errors }" >
           <mat-option value="1">TÉCNICO EN INDUSTRIAL PETRÓLERO</mat-option>
           <mat-option value="2"> TÉCNICO EN ENFERMERÍA</mat-option>
           <mat-option value="3">TÉCNICO EN LOGÍSTICA</mat-option>
@@ -49,8 +49,8 @@
 
         </mat-select>
 
-        <mat-error *ngIf="submitted && form.name.errors" class="">
-          <div *ngIf="sendMessageGroup.controls.name.errors.required">Correo invalido</div>
+        <mat-error *ngIf="submitted && form.career.errors" class="">
+          <div *ngIf="sendMessageGroup.controls.career.errors.required">Selección invalida</div>
         </mat-error>
       </mat-form-field>
 
@@ -60,13 +60,13 @@
           <mat-form-field class="w-100 mb-3">
             <mat-label>Sistema de estudio</mat-label>
             <mat-select matInput formControlName="system"
-            [ngClass]="{ 'is-invalid': submitted && form.name.errors }" >
+            [ngClass]="{ 'is-invalid': submitted && form.system.errors }" >
               <mat-option value="option1">Estudio en linea</mat-option>,
               <mat-option value="option2">Estudio semiescolarizado</mat-option>
             </mat-select>
 
             <mat-error *ngIf="submitted && form.name.errors" class="">
-              <div *ngIf="sendMessageGroup.controls.name.errors.required">Correo invalido</div>
+              <div *ngIf="sendMessageGroup.controls.system.errors.required">Selección invalida</div>
             </mat-error>
           </mat-form-field>
 
@@ -91,4 +91,26 @@
       </div>
     </form>
   </mat-card>
+</div>
+
+<div class="container">
+ <div class="row">
+  <div class=" col-md-6">
+    <h4> Registrate, ven y obtén tu BECA ICR 2021 con tan solo inscribirte y entregar los requisitos. </h4>
+     <h5>Requisitos</h5>
+    <ul>
+    
+      <li >Acta de nacimiento original actualizada</li>
+      <li>Certificado de Secundaria Original</li>
+      <li>Curp</li>
+      <li >Certificado Médico</li>
+      <li>4 Fotografías blanco y negro tamaño infantil</li>
+      <li> Todos los documentos en original y 3 copias</li>
+   </ul>
+   
+  </div>
+   <div class="img col-md-6"> 
+     <img src="assets/img/front-view-of-female-student-in-white-shirt-wearing-backpack-black-sterile-mask-holding-coffee-and-files-on-the-blue-wall.jpg" alt="">
+   </div>
+</div>
 </div>
